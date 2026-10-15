@@ -1,0 +1,553 @@
+/* atelier irène merz — single hand-written stylesheet. */
+
+/* Self-hosted Open Sans variable font (latin + latin-ext, regular + italic). */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/open-sans-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/open-sans-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF,
+    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("/fonts/open-sans-italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --ink: #5f5f5f;
+  --ink-strong: #3d3d3d;
+  --paper: #fffefd;
+  --chrome: #252525;
+  --accent: #9f7e69;
+  --accent-dark: #5e4a48;
+  --accent-hover: #8f716d;
+  --line: #e3ddd8;
+  --max: 75rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink-strong);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+h3 {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ header */
+
+.site-header {
+  background: var(--chrome);
+  padding: 1.25rem 1rem 0.75rem;
+  text-align: center;
+}
+
+.site-logo img {
+  width: min(400px, 86vw);
+  height: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.4rem;
+}
+
+.site-nav a {
+  color: #fff;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover {
+  color: #d9c3b5;
+  text-decoration: none;
+  border-bottom-color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ banner */
+
+.page-banner {
+  background: #4a4a4a url("/img/banner-folgeseiten.jpg") center / cover
+    no-repeat;
+  padding: 3.2rem 1rem;
+  text-align: center;
+}
+
+.page-banner h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+/* ------------------------------------------------------------------ layout */
+
+.page-content {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+.intro,
+.bio-block,
+.links,
+.contact,
+.impressum {
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+}
+
+.exhibitions {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.exhibition-year {
+  margin-bottom: 1.8rem;
+}
+
+.exhibition-year h2 {
+  color: var(--accent);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.exhibition-entry {
+  margin-bottom: 0.9rem;
+}
+
+.exhibition-title {
+  margin: 0;
+}
+
+.exhibition-detail {
+  margin: 0.1rem 0 0;
+}
+
+/* -------------------------------------------------------------------- home */
+
+.home-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.home-heading {
+  display: inline-block;
+  color: #fffefd;
+  text-transform: uppercase;
+  background: var(--accent);
+  max-width: 500px;
+  padding: 0.5rem 2.2rem;
+  border-radius: 3px;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.home-banner {
+  margin: 0;
+}
+
+.home-banner img {
+  display: block;
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+/* ----------------------------------------------------------------- gallery */
+
+.gallery-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-top: 2rem;
+}
+
+.gallery-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--accent-dark);
+  border-radius: 2px;
+  background: var(--accent-dark);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.filter-button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.filter-button[aria-pressed="false"] {
+  background: transparent;
+  color: var(--accent-dark);
+}
+
+.filter-button[aria-pressed="false"]:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+}
+
+.gallery-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 5 200px;
+  column-gap: 1.25rem;
+}
+
+.artwork {
+  break-inside: avoid;
+  margin: 0 0 1.25rem;
+}
+
+.artwork-link {
+  display: block;
+  position: relative;
+  color: inherit;
+}
+
+.artwork-link img {
+  display: block;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+.artwork-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1.6rem 0.5rem 0.4rem;
+  color: #fff;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.artwork-link:hover .artwork-caption,
+.artwork-link:focus-visible .artwork-caption {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------- lightbox */
+
+html.has-lightbox {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 18, 17, 0.92);
+}
+
+.lightbox-panel {
+  position: relative;
+  margin: 0;
+  max-width: min(92vw, 68rem);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #111;
+}
+
+.lightbox-caption {
+  color: #e8e2de;
+  text-align: center;
+  padding-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.2rem;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.lightbox-desc {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.lightbox-meta {
+  font-size: 0.85rem;
+  color: #b3a89f;
+}
+
+.lightbox-counter {
+  font-size: 0.85rem;
+  color: #b3a89f;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  z-index: 2;
+  font: inherit;
+  font-size: 2rem;
+  line-height: 1;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.lightbox-close {
+  top: -0.5rem;
+  right: -0.5rem;
+}
+
+.lightbox-prev {
+  left: -0.5rem;
+  top: 40%;
+}
+
+.lightbox-next {
+  right: -0.5rem;
+  top: 40%;
+}
+
+/* ------------------------------------------------------------------ button */
+
+.button {
+  display: inline-block;
+  background: var(--accent-dark);
+  color: #fff;
+  border: 1px solid var(--accent-dark);
+  border-radius: 2px;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.95rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.lightbox-inquire {
+  flex-basis: 100%;
+}
+
+/* ----------------------------------------------------------------- biografie */
+
+.bio-gallery {
+  list-style: none;
+  margin: 2.5rem auto 0;
+  padding: 0.5rem 0 1.5rem;
+  max-width: var(--max);
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.bio-gallery li {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+}
+
+.bio-gallery img {
+  height: 220px;
+  width: auto;
+  display: block;
+}
+
+/* ------------------------------------------------------------------ footer */
+
+.site-footer {
+  background: var(--chrome);
+  color: #fff;
+  padding: 2.5rem 1rem 2rem;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.site-footer h2 {
+  color: #fff;
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.site-footer p {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.site-footer a:hover {
+  color: #d9c3b5;
+}
+
+.footer-legal {
+  margin-top: 1.6rem !important;
+  font-size: 0.8rem !important;
+  color: #9a9a9a;
+}
+
+.footer-legal a {
+  font-size: 0.8rem;
+  color: #9a9a9a;
+}
+
+/* -------------------------------------------------------------- responsive */
+
+@media (max-width: 640px) {
+  .page-content {
+    padding: 1.8rem 1rem 2.5rem;
+  }
+
+  .site-nav ul {
+    gap: 0.15rem 1rem;
+  }
+
+  .bio-gallery img {
+    height: 150px;
+  }
+
+  .lightbox-nav {
+    top: auto;
+    bottom: 8.5rem;
+  }
+
+  .lightbox-prev {
+    left: 0.4rem;
+  }
+
+  .lightbox-next {
+    right: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
